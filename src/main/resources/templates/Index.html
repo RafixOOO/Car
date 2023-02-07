@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>CAR</title>
+</head>
+<body>
+<form action="/car" th:object="${command}" method="GET" >
+<center>
+    Make: <input type="text" th:field="*{textField}" list="car" autocomplete="off" required/>
+    <datalist id="car">
+        <span th:each="c : ${car}">
+        <option th:utext="${c.name}"></option>
+        </span>
+    </datalist>
+    <input type="Submit" Value="Dalej" /></center>
+</form>
+<br />
+<a th:href="@{/graphfuel}">Paliwo</a><br /> <br />
+<a th:href="@{/displayPieChart}">Czas</a>
+</body>
+</html>

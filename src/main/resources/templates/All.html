@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Car</title>
+</head>
+<body>
+<h1>Auto: </h1>
+<ul>
+    <li th:utext="${make}"></li>
+    <li th:utext="${model}"></li>
+    <li th:utext="${generation}"></li>
+    <li th:utext="${series}"></li>
+    <li th:utext="${trim}"></li>
+    <li th:utext="${equ}"></li>
+</ul>
+<div Style="float: left; width: 50%;"><h2>Specyfication: </h2>
+<ul th:each="s : ${spec}">
+    <li th:utext="${s.name}+' '+ ${s.value}+' '+${s.unit}"></li>
+</ul>
+</div>
+<div style="float: left; width: 50%;"><h2>Option: </h2>
+<ul th:each="o : ${opti}">
+    <li th:utext="${o.name}"></li>
+</ul>
+</div>
+<div Style="Clear: both;"></div>
+</body>
+</html>

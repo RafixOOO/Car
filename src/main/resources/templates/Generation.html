@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>CAR</title>
+</head>
+<body>
+<form action="/car2" th:object="${command}" method="GET" >
+  <center>
+    Generation: <input type="text" th:field="*{textareaField}" list="car" autocomplete="off" required/>
+    <datalist id="car">
+        <span th:each="g : ${Generation}">
+        <option th:utext="${g.Name}"></option>
+        </span>
+    </datalist>
+    <input type="Submit" Value="Dalej" /></center>
+</form>
+</body>
+</html>
